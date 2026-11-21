@@ -1,0 +1,5 @@
+- Use the shared step-based submission form for admins and owners; an invoker database function saves app details and screenshots atomically with RLS enforcing admin-only listing.
+- Upload app images through an authenticated server function with byte-signature validation into private Storage; resolve signed URLs per viewer so drafts remain private.
+- Attach the current Supabase bearer via function middleware for authenticated server calls; never put server credentials in the browser.
+- Scope developer reads to owners, admins, or published authors; use a fixed-search-path boolean definer helper for published membership to avoid circular applications/developers RLS.
+- Scope app-media reads to owner_id, admins, or exact published icon/screenshot references; the public boolean helper deliberately reveals only publication visibility, never draft data.
