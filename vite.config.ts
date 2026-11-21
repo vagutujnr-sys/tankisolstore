@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     tailwindcss(),
     tsconfigPaths(),
-    nitro({ preset: "cloudflare-module" }),
+    nitro({ preset: "vercel" }),
   ],
   define: {
     "process.env.NODE_ENV": JSON.stringify(mode),
